@@ -26,6 +26,7 @@ puts %q[
       888 .  888   888   888   888   888  888   888  888   888    .o.
       "888"  `V88V"V8P' o888o o888o o888o `Y8bod8P' o888o d888b   Y8P
 
+------EYEFODDER FORK -----
 ]
 
 ARGV.clear
