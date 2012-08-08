@@ -20,7 +20,20 @@ module Tumblr
         req.body = params unless params.empty?
       end
       #Check for errors and encapsulate
-      response.body['response']
+      # @PBH  - quick and dirty way of 
+      statuscode = response.body['meta']['status']
+      resp = 
+
+      #if the staus is good - say so
+      success = [200, 201].include?(statuscode)
+      if success
+        result = response.body['response']
+      else
+        #in this case = send whole body
+        result = response.body
+      end
+      result['success'] = success
+      result
     end
   end
 end
